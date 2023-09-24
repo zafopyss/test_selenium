@@ -7,6 +7,7 @@ from random import *
 from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
+import random 
 
 # Créez une boucle pour exécuter le script 100 fois
 for _ in range(15):
@@ -17,8 +18,9 @@ for _ in range(15):
     options.add_argument("user-agent=Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; Microsoft; Lumia 640 XL LTE) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Mobile Safari/537.36 Edge/12.10166")
     options.add_argument('--headless')
     driver = webdriver.Chrome(service=service, options=options)
-
-    time.sleep(1)
+    time_before_new_vote = random.randint(600,900)
+    print(time_before_new_vote)
+    time.sleep(time_before_new_vote)
 
     driver.get("https://10minutemail.com/session/address")
 
